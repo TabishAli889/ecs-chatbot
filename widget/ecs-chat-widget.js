@@ -12,7 +12,7 @@
   var API_BASE = (
     (script && script.dataset && script.dataset.api) ||
     window.ECS_CHAT_API ||
-    "http://localhost:8000"
+    window.location.origin
   ).replace(/\/+$/, "");
 
   var STORAGE_KEY = "ecs_chat_session";

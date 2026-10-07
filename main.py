@@ -14,6 +14,8 @@ from contextlib import asynccontextmanager
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from langchain_cohere import CohereEmbeddings
@@ -121,6 +123,16 @@ def _history_text(history: list) -> str:
         role = "User" if isinstance(m, HumanMessage) else "Assistant"
         lines.append(f"{role}: {m.content}")
     return "\n".join(lines)
+
+
+WIDGET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "widget")
+app.mount("/widget", StaticFiles(directory=WIDGET_DIR), name="widget")
+
+
+@app.get("/", include_in_schema=False)
+async def demo_page():
+    # Demo page with the chat widget, so the chatbot can be tried from one link
+    return FileResponse(os.path.join(WIDGET_DIR, "demo.html"))
 
 
 @app.get("/health")

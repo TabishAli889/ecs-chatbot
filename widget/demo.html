@@ -5,17 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ECS Chatbot Demo</title>
   <style>
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#faf8fd; color:#1f1f29; }
-    main { max-width:720px; margin:80px auto; padding:0 16px; }
-    h1 { color:#8159af; }
+    :root { color-scheme: light dark; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:#faf8fd; color:#1f1f29; }
+    @media (prefers-color-scheme: dark) { body { background:#121117; color:#ecebf1; } }
+    main { max-width:640px; margin:0 auto; padding:72px 20px; }
+    .tag { display:inline-block; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:#8159af; }
+    h1 { margin:8px 0 12px; font-size:32px; }
+    p { line-height:1.6; opacity:.85; }
+    ul { line-height:1.9; padding-left:20px; }
+    .note { margin-top:28px; font-size:14px; opacity:.65; }
   </style>
 </head>
 <body>
   <main>
-    <h1>ECS Chatbot — local demo</h1>
-    <p>Click the purple bubble in the bottom-right corner to chat.</p>
-    <p>Make sure the backend is running: <code>uvicorn main:app --reload --port 8000</code></p>
+    <span class="tag">Excellence Code Solution</span>
+    <h1>ECS Website Assistant — Demo</h1>
+    <p>Click the purple chat bubble in the bottom-right corner. Try questions like:</p>
+    <ul>
+      <li>What services do you offer?</li>
+      <li>Tell me more about the first one</li>
+      <li>MERN bootcamp fee kitni hai?</li>
+      <li>How can I book a demo?</li>
+      <li>Tell me about DHA Connects</li>
+      <li>How much does a website cost?</li>
+    </ul>
+    <p class="note">The first message may take up to a minute if the server has been idle (free hosting wakes up on demand).</p>
   </main>
-  <script src="ecs-chat-widget.js" data-api="http://localhost:8000"></script>
+  <script src="/widget/ecs-chat-widget.js"></script>
 </body>
 </html>
