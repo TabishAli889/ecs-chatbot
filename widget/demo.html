@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECS Chatbot Demo</title>
+  <style>
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#faf8fd; color:#1f1f29; }
+    main { max-width:720px; margin:80px auto; padding:0 16px; }
+    h1 { color:#8159af; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>ECS Chatbot — local demo</h1>
+    <p>Click the purple bubble in the bottom-right corner to chat.</p>
+    <p>Make sure the backend is running: <code>uvicorn main:app --reload --port 8000</code></p>
+  </main>
+  <script src="ecs-chat-widget.js" data-api="http://localhost:8000"></script>
+</body>
+</html>

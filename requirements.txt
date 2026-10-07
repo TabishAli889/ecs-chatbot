@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain-core
+langchain-cohere
+langchain-groq
+langchain-qdrant
+qdrant-client
