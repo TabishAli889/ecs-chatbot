@@ -33,10 +33,7 @@
   .ecs-chat, .ecs-chat * { box-sizing: border-box; font-family: inherit; }
   .ecs-chat { --ecs-primary:#8159af; --ecs-primary-dark:#6a4593; --ecs-bg:#ffffff; --ecs-text:#1f1f29;
     --ecs-muted:#6b6b7b; --ecs-bot:#f3eff8; --ecs-border:#e6e1ee;
-    position:fixed; right:20px; bottom:20px; z-index:2147483000; font-size:15px; line-height:1.45; }
-  @media (prefers-color-scheme: dark) {
-    .ecs-chat { --ecs-bg:#17161c; --ecs-text:#ecebf1; --ecs-muted:#a3a1b0; --ecs-bot:#26232f; --ecs-border:#2f2c38; }
-  }
+    position:fixed; right:20px; bottom:20px; z-index:2147483000; font-size:15px; line-height:1.45; color-scheme:light; }
   .ecs-chat__btn { width:60px; height:60px; border-radius:50%; border:none; cursor:pointer; background:var(--ecs-primary);
     color:#fff; display:grid; place-items:center; box-shadow:0 8px 24px rgba(129,89,175,.45); transition:transform .2s, background .2s; }
   .ecs-chat__btn:hover { background:var(--ecs-primary-dark); transform:scale(1.05); }
